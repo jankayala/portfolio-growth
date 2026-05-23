@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Growth Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Portfolio Growth Visualizer</h1>
+    <div class="inputs">
+      <div class="field" id="initial-field"><label>Initial Portfolio (€)</label><input id="initial" type="number"
+          value="0"></div>
+      <div class="field" id="monthly-field"><label>Monthly Contribution (€)</label><input id="monthly" type="number"
+          value="0"></div>
+      <div class="field" id="growth-field"><label>Contribution Growth (%)</label><input id="growth" type="number"
+          value="2" step=".1"></div>
+      <div class="field slider-field" id="slider-field">
+        <label>Annual Return (%)</label>
+        <div class="slider-track" id="sliderTrack">
+          <div class="slider-bg"></div>
+          <div class="slider-fill" id="sliderFill"></div>
+          <div class="slider-handle" id="handleBad" data-key="badReturn" style="left:6.7%">
+            <div class="handle-dot" style="background:#ef4444"></div>
+          </div>
+          <div class="slider-handle" id="handleReturn" data-key="return" style="left:23.3%">
+            <div class="handle-dot" style="background:#6366f1"></div>
+          </div>
+          <div class="slider-handle" id="handleGood" data-key="goodReturn" style="left:40%">
+            <div class="handle-dot" style="background:#10b981"></div>
+          </div>
+        </div>
+        <div class="slider-inputs" id="sliderInputs">
+          <div class="input-wrap" id="wrapBad" style="left:6.7%">
+            <div class="arrow" style="border-bottom-color:#ef4444"></div><input class="handle-input" id="badReturnVal"
+              type="number" value="2" min="0" max="30" step=".1">
+          </div>
+          <div class="input-wrap" id="wrapReturn" style="left:23.3%">
+            <div class="arrow" style="border-bottom-color:#6366f1"></div><input class="handle-input" id="returnVal"
+              type="number" value="7" min="0" max="30" step=".1">
+          </div>
+          <div class="input-wrap" id="wrapGood" style="left:40%">
+            <div class="arrow" style="border-bottom-color:#10b981"></div><input class="handle-input" id="goodReturnVal"
+              type="number" value="12" min="0" max="30" step=".1">
+          </div>
+        </div>
+      </div>
+      <div class="field" id="years-field"><label>Years</label><input id="years" type="number" value="30"></div>
+    </div>
+
+    <div class="result" id="result">—</div>
+    <canvas id="chart"></canvas>
+    <div class="table-wrap">
+      <table id="milestones">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Portfolio</th>
+            <th>Bad Return</th>
+            <th>Good Return</th>
+            <th>Invested</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
