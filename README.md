@@ -2,6 +2,8 @@
 
 An interactive web tool to visualize long-term portfolio growth with customizable return scenarios.
 
+**Live Demo**: https://jankayala.github.io/portfolio-growth/
+
 ## Features
 
 - **Triple-handle slider** — set pessimistic, expected, and optimistic annual return rates
@@ -9,6 +11,7 @@ An interactive web tool to visualize long-term portfolio growth with customizabl
 - **Interactive chart** — line graph showing portfolio value, total invested, bad/good return scenarios
 - **Milestone table** — year-by-year breakdown with automatic highlighting when the portfolio reaches €1M
 - **State persistence** — your inputs are saved to localStorage across sessions
+- **Mobile responsive** — works on smartphones and tablets
 
 ## Usage
 
